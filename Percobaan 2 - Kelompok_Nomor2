@@ -1,0 +1,131 @@
+int POW1 = 11;
+int POW2 = 12;
+int POW3 = 13;
+int pin_7segmen[11][7] = {
+{ 1,1,1,1,1,1,0 }, // = 0
+{ 0,1,1,0,0,0,0 }, // = 1
+{ 1,1,0,1,1,0,1 }, // = 2
+{ 1,1,1,1,0,0,1 }, // = 3
+{ 0,1,1,0,0,1,1 }, // = 4
+{ 1,0,1,1,0,1,1 }, // = 5
+{ 1,0,1,1,1,1,1 }, // = 6
+{ 1,1,1,0,0,0,0 }, // = 7
+{ 1,1,1,1,1,1,1 }, // = 8
+{ 1,1,1,1,0,1,1 }, // = 9
+{ 0,0,0,0,0,0,0 } // mati
+};
+
+void setup() {
+  pinMode(POW1, OUTPUT), pinMode(POW2, OUTPUT), pinMode(POW3,OUTPUT);
+  for (byte k = 2; k < 10; k++) {
+    pinMode(k,OUTPUT);
+  }
+  digitalWrite(9,LOW);
+}
+
+void loop() {
+// Muh. Risdar Norhidayatullah
+  risdar(0); 
+  delay(1000);
+  risdar(5);
+  delay(1000);
+  risdar(10);
+  delay(1000);
+  risdar(0); 
+  delay(1000);
+  risdar(4); 
+  delay(1000);
+  risdar(10);
+  delay(1000);
+  risdar(2); 
+  delay(1000);
+  risdar(0); 
+  delay(1000);
+  risdar(0); 
+  delay(1000);
+  risdar(2); 
+  delay(1000);
+  risdar(10);
+  delay(1500);
+
+// Muhammad Anas Punggawa
+  anas(1); 
+  delay(1000);
+  anas(7);
+  delay(1000);
+  anas(10);
+  delay(1000);
+  anas(0); 
+  delay(1000);
+  anas(8); 
+  delay(1000);
+  anas(10);
+  delay(1000);
+  anas(2); 
+  delay(1000);
+  anas(0); 
+  delay(1000);
+  anas(0); 
+  delay(1000);
+  anas(1); 
+  delay(1000);
+  anas(10);
+  delay(1500);
+
+//Andi Muh. Mappanganro
+  angga(1); 
+  delay(1000);
+  angga(7);
+  delay(1000);
+  angga(10);
+  delay(1000);
+  angga(1); 
+  delay(1000);
+  angga(2); 
+  delay(1000);
+  angga(10);
+  delay(1000);
+  angga(1); 
+  delay(1000);
+  angga(9); 
+  delay(1000);
+  angga(9); 
+  delay(1000);
+  angga(9); 
+  delay(1000);
+  angga(10);
+  delay(3000);
+}
+
+void risdar(byte baris) {
+  digitalWrite(POW1,0);
+  digitalWrite(POW2,1);
+  digitalWrite(POW3,1);
+  byte pin = 2;
+  for (byte kolom = 0; kolom < 8; ++ kolom) {
+    digitalWrite(pin,pin_7segmen[baris][kolom]);
+    ++pin;
+ }
+}
+
+void anas(byte baris) {
+  digitalWrite(POW1,1);
+  digitalWrite(POW2,0);
+  digitalWrite(POW3,1);
+  byte pin = 2;
+  for (byte kolom = 0; kolom < 8; ++ kolom) {
+    digitalWrite(pin,pin_7segmen[baris][kolom]);
+    ++pin;
+ }
+}
+
+void angga(byte baris) {
+  digitalWrite(POW1,1);
+  digitalWrite(POW2,1);
+  digitalWrite(POW3,0);
+  byte pin = 2;
+  for (byte kolom = 0; kolom < 8; ++ kolom) {
+    digitalWrite(pin,pin_7segmen[baris][kolom]);
+    ++pin;
+ }
+}
