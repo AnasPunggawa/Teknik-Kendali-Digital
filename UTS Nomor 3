@@ -1,0 +1,44 @@
+int merah1 = 3;
+int kuning1 = 2;
+int hijau1 = 1;
+
+int merah2 = 10;
+int kuning2 = 9;
+int hijau2 = 8;
+
+void setup() {
+  pinMode(merah1, OUTPUT);
+  pinMode(kuning1, OUTPUT);
+  pinMode(hijau1, OUTPUT);
+
+  pinMode(merah2, OUTPUT);
+  pinMode(kuning2, OUTPUT);
+  pinMode(hijau2, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(merah1, 1);
+  digitalWrite(hijau2, 1);
+  delay(1500);
+
+  digitalWrite(merah1, 1);
+  digitalWrite(hijau2, 0);
+  digitalWrite(kuning2, 1);
+  delay(1000);
+
+  digitalWrite(merah1, 0);
+  digitalWrite(hijau1, 1);
+  digitalWrite(kuning2, 0);
+  digitalWrite(merah2, 1);
+  delay(1500);
+
+  digitalWrite(merah1, 0);
+  digitalWrite(hijau1, 0);
+  digitalWrite(kuning1, 1);
+  digitalWrite(merah2, 1);
+  delay(1000);
+
+  digitalWrite(kuning1, 0);
+  digitalWrite(merah2, 0);
+
+}
